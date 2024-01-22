@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_timeline import timeline
 
 ### METADATA
 st.set_page_config(page_title="Bruno M. Guerreiro | Portfolio",
@@ -33,12 +34,24 @@ linkedin.markdown('<div style="text-align: left"><a href="https://www.linkedin.c
 st.sidebar.write('')
 
 # Resume/CV download button
-st.sidebar.markdown(f'<a href="https://1drv.ms/b/s!At7e_tE6ZFn0hJoSI8rhGrTpzQKJ3Q?e=kcVa7A" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download CV</button></a>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AUc-mr9IdBV0s2oNr9koOjYp5Wig6F4O_dhDGJS_bpYbGOeQIzCkLCQSWYV-nC3-IH4CkRIJWpzA" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download CV</button></a>', unsafe_allow_html=True)
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
-st.sidebar.selectbox("Select project here:",
-                                       ["Select project...",
-                                        "Pão Nosso news project",
-                                        "MDPI Polymers 2021 Best Cover Paper Award",
-                                        "Community Content Creation"])
 
 
+
+
+### CONTENT
+aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
+                                                         "Certifications",
+                                                         "Ph.D.",
+                                                         "Data Science",
+                                                         "Graphic Design",
+                                                         "Technical Writing",
+                                                         "Projects",
+                                                         "Media"])
+
+with aboutme:
+    ### TIMELINE
+    with open('timeline.json', "r") as f:
+        data = f.read()
+    timeline(data, height=600)
