@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
+# can be abstracted into function, leave for now
 concentration = [0.05, 0.1, 0.2, 0.25, 1]
 
 UVA_t0 = [1.00, 1.00, 1.00, 1.00, 1.00]
