@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_timeline import timeline
 import numpy as np
 import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 ### METADATA
 st.set_page_config(
