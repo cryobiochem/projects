@@ -40,7 +40,6 @@ st.sidebar.write('')
 # Resume/CV download button
 st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AUc-mr9IdBV0s2oNr9koOjYp5Wig6F4O_dhDGJS_bpYbGOeQIzCkLCQSWYV-nC3-IH4CkRIJWpzA" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download Resume/CV</button></a>', unsafe_allow_html=True)
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
-st.sidebar.info("⚠️ For optimal website experience, use light theme & wide mode.")
 
 ### CONTENT
 aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
