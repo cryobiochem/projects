@@ -949,8 +949,8 @@ with ds:
         st.plotly_chart(fig, use_container_width=True, theme="streamlit")
         
     with st.container(border=True):
-        data = pd.read_excel("data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
-        monomers = pd.read_excel("data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
+        data = pd.read_excel("streamlit-portfolio/data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
+        monomers = pd.read_excel("streamlit-portfolio/data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
         monomers = monomers.iloc[:, 2:]
 
         # Create a list of cationic, anionic, and uncharged monomers for composition radar charts
