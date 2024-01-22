@@ -1,5 +1,11 @@
-import streamlit as st  # 🎈 data web app development
+import streamlit as st 
 from streamlit_timeline import timeline
+import numpy as np
+import pandas as pd 
+import plotly.express as px  
+import base64
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 ### METADATA
 st.set_page_config(
@@ -161,6 +167,53 @@ with certs:
         with col3: st.info("e-Commerce")
         with col4: st.info("SEO")
         with col5: st.info("ROI")
+
+
+
+
+with phd:
+    st.header("My Ph.D. Journey")
+    st.caption("I have a strong background in life sciences and scientific research, having accumulated 10 years of constant critical thinking and problem-solving capabilities, and almost 7 years of theoretical and applied research focus."
+               " My 4-year Ph.D. journey in particular has equipped me with a core skillset of adaptability, efficiency, productivity and being able to get out of a rut. Producing new knowledge in a scientific field"
+               " is often a arduous path and requires patience, determination and ambition. Backing up, defending and presenting our ideas is also a part of the research life, such that I have honed"
+               "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences.")
+
+    with st.container(border=True):
+        st.markdown("Skills demonstrated in this section:")
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1: st.info("Critical Thinking")
+        with col2: st.info("Problem Solving")
+        with col3: st.info("Public Speaking")
+        with col4: st.info("Technical Writing")
+        with col5: st.info("Data Presentation")
+
+    st.write("")
+
+    st.image("https://i.imgur.com/H26Nnem.png")
+
+    st.write("")
+    st.write("")
+    st.subheader("Cryopreservation fundamentals + my approach")
+    with st.container(border=True):
+        st.image("https://i.imgur.com/fW46l27.png")
+
+    st.write("")
+    st.write("")
+    st.subheader("The organ transplant crisis")
+    with st.container(border=True):
+        st.image("https://i.imgur.com/5f6BDf9.png")
+
+    st.write("")
+    st.write("")
+    st.subheader("Lab work methodology")
+    with st.container(border=True):
+        st.image("https://i.imgur.com/SNt2e6m.jpg")
+
+    st.write("")
+    st.write("")
+    st.subheader("Some of my contributions (+ visuals)")
+    with st.container(border=True):
+        st.image("https://i.imgur.com/N74iMeP.jpg")
     
 
 
