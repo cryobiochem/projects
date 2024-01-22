@@ -3,7 +3,6 @@ from streamlit_timeline import timeline
 import numpy as np
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
-import base64
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
