@@ -3,3 +3,4 @@ plotly==5.9.0
 openpyxl
 numpy
 pandas
+base64
