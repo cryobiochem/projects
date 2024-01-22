@@ -47,14 +47,11 @@ st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AU
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
 
 ### CONTENT
-aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
+aboutme, certs, phd, ds, proj = st.tabs(["About me",
                                                          "Certifications",
                                                          "Ph.D.",
                                                          "Data Science",
-                                                         "Graphic Design",
-                                                         "Technical Writing",
-                                                         "Projects",
-                                                         "Media"])
+                                                         "Projects"])
 
 
 with aboutme:
