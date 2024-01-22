@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="survey-form.css">
+  <link href="https://fonts.googleapis.com/css?family=Kalam|Open+Sans+Condensed:300|Tajawal:700&display=swap" rel="stylesheet">
+  <meta class="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tribute Page</title>
+  <link rel="shortcut icon" href="/interactivecryo.png" type="image/x-icon">
+  <link rel="icon" href="/interactivecryo.png" type="image/x-icon">
+</head>
+
+<body id="main">
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Please answer the following questions and submit your form.</p>
+  <hr>
+  <form id="survey-form">
+  <fieldset class="container">
+    <legend>Personal Info</legend>
+    <br>
+    <label for="name-label" id="name-label">Name</label><br>
+    <input type="text" name="name" placeholder="Enter your name here" id="name" required><br>
+    <label for="email-label" id="email-label">E-mail</label><br>
+    <input type="email" name="email" placeholder="Enter your e-mail here" id="email" required><br>
+    <label for="number-label" id="number-label">Age</label><br>
+    <input type="number" name="number" placeholder="Enter your age here (optional)" id="number" min="16" max="100"><br>
+  </fieldset>
+  <br>
+  <fieldset class="container">
+        <legend>Area of Specialty?</legend>
+            <select name="specialty" id="dropdown">
+             <option value="stem">STEM</option>
+             <option value="math">Mathematical Sciences</option>
+             <option value="it">Computer Science</option>
+             <option value="social">Social Sciences</option>
+           </select>
+        <br>
+     </fieldset>
+
+     <br>
+     <fieldset class="container">
+       <legend>Where did you find this website?</legend>
+       <input type="radio" name="find" value="you"><span id="option">You, personally</span><br>
+       <input type="radio" name="find" value="work"><span id="option">Work</span><br>
+       <input type="radio" name="find" value="emails"><span id="option">Your e-mails</span><br>
+       <input type="radio" name="find" value="friend"><span id="option">A friend</span><br>
+       <input type="radio" name="find" value="random"><span id="option">Random internet searches</span><br>
+     </fieldset>
+     <br>
+     <fieldset class="container">
+       <legend>What do you like here?</legend>
+       <input type="checkbox" name="like" value="design"><span id="option">Design of website</span><br>
+       <input type="checkbox" name="like" value="clean"><span id="option">Cleanliness of information</span><br>
+       <input type="checkbox" name="like" value="multi"><span id="option">Multipage organization</span><br>
+       <input type="checkbox" name="like" value="portfolio"><span id="option">Portfolio-ready</span><br>
+     </fieldset>
+     <br>
+     <fieldset class="container">
+       <legend>Please give me some feedback</legend>
+       <br>
+       <textarea name="feedback" rows="30" cols="80"></textarea>
+     </fieldset>
+     <br>
+     <button class="button" style="vertical-align:middle" id="submit"><span>Submit </span></button>
+  </form>
+
+</body>
+
+</html>

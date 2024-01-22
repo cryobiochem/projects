@@ -1,0 +1,294 @@
+:root {
+}
+
+/*all website content is rescaled and animated */
+.wrapper {
+position: relative;
+overflow: auto;
+margin: 0 auto;
+display: block;
+max-width: 1920px;
+width: 100%;
+
+-webkit-box-sizing : border-box;‌​
+-moz-box-sizing : border-box;
+box-sizing : border-box;
+
+-webkit-transition-duration: all .4s ease-in-out;
+-moz-transition-duration: all .4s ease-in-out;
+-o-transition-duration: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+
+/*WEBSITE BACKGROUND*/
+.infront-of-background {
+  overflow: auto;
+  position: relative;
+}
+
+.infront-of-background::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -2222;
+
+  display: block;
+  background-image: url('http://eskipaper.com/images/crystal-wallpaper-9.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  width: 110%;
+  height: 110%;
+  margin-left: -5%;
+  margin-top: -5%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
+/* TODO: image is cropping on top to white space */
+}
+
+legend:focus {
+  background-color: yellow;
+}
+body {
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+}
+
+h4 {
+  font-family: 'Sen', sans-serif;
+  font-size: 30px;
+  margin: 20px 40px 20px 40px;
+  color: rgb(84, 192, 247);
+  -webkit-text-stroke-width: 1px;
+  text-shadow: black 0px 5px;
+}
+
+h5 {
+  font-family: 'Sen', sans-serif;
+  font-size: 18px;
+  margin: 20px 40px 20px 40px;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  text-shadow: black 0px 5px;
+  text-align: justify;
+}
+
+p, li {
+  font-family: 'Sen', sans-serif;
+  font-size: 24px;
+  color: white;
+  text-align: justify;
+  margin-left: 80px;
+}
+
+footer {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1px;
+  text-shadow: black 2px 6px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+[type="socials"] {
+  background-color: rgba(84, 192, 247, 0) !important;
+}
+
+#socials {
+  font-family: 'Sen', sans-serif;
+  font-size: 24px;
+  color: white;
+}
+
+#socials:link {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(84, 192, 247, 0.4);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  border-radius: 2%;
+}
+
+#socials:visited {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: #f44336;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  border-radius: 2%;
+}
+
+/* mouse over link */
+#socials:hover {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(84, 192, 247, 1);
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  border-radius: 2%;
+}
+
+
+/* selected link */
+#socials:active {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(84, 192, 247, 0.5);
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  border-radius: 2%;
+}
+
+#title {
+  font-family: 'Righteous', cursive;
+  font-size: 120px;
+  text-align: center;
+  line-height: 100px;
+  -webkit-text-fill-color: white;
+  text-shadow: rgba(84, 192, 247, 0.5) 12px 3px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+}
+#subtitle {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  line-height: 1px;
+  text-shadow: black 2px 6px;
+}
+
+#about-me {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+/*CONTENT BOXES*/
+.about-me-container {
+  margin: 30px auto 9px auto;
+  position:relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.content-container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  text-align: center;
+  min-height: 200px;
+  margin: 2px 200px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  padding: 25px;
+
+}
+
+.content-column-grid {
+  margin: 10px;
+  background-color: #000000;
+  border: 2px solid black;
+  -background: hsl(0, 10%, 100%); /* Fallback for older browsers without RGBA-support */
+  background: rgba(0, 0, 0, .35);
+  border-radius: 2%;
+  box-shadow: 0px -7px  rgba(255, 255, 255, 0.5), 0px 0px 6px 5px rgba(34, 142, 197,0.23);
+  padding: 0px 10px 10px 10px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 100%));
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 100%));
+}
+
+.content-subcolumn-grid {
+  margin: 10px;
+  background-color: #000000;
+  border: 2px solid black;
+  -background: hsl(0, 10%, 100%); /* Fallback for older browsers without RGBA-support */
+  background: rgba(0, 0, 0, 0);
+  border-radius: 2%;
+  box-shadow: 0px -7px  rgba(255, 255, 255, 0.5)
+  padding: 0px 10px 10px 10px;
+  display:flex;
+}
+
+.content-item {
+  font-size: 18px;
+  align-self: center;
+  justify-content: center;
+  /* TODO: aligns items side by side */
+}
+
+/* description text */
+.content-item .descriptiontext {
+  visibility: hidden;
+  clear: both;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 3px solid rgb(0, 0, 0);
+  color: #fff;
+  text-align: center;
+  padding: 0px 5px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+  font-size: 18px;
+
+  position: absolute;
+  z-index: 1;
+
+}
+
+.content-item .descriptiontext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the description */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* Show the description text when you mouse over the description container */
+.content-item:hover .descriptiontext {
+  visibility: visible;
+}
+
+
+
+/*ANIMATIONS HERE*/
+.zoom {
+  transition: transform 0.4s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

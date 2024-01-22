@@ -1,0 +1,105 @@
+#header{
+}
+
+#header-img{
+  margin: 0 auto;
+  width: 100%;
+}
+
+#nav-bar{
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 22222;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+.nav-link {
+
+}
+
+#home, #news, #contact {
+
+}
+
+p {
+  font-size: 24px;
+  line-height: 40px;
+  text-align: left;
+  font-style: italic;
+}
+
+body {
+    font-size: 28px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-family: 'Annie Use Your Telescope', cursive;
+  }
+
+h1 {
+  position: absolute;
+  color: white;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: .5em;
+  font-size: 120px;
+  text-shadow: 2px 2px 4px black;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  top: 0;
+  width: auto;
+  }
+
+li {
+    float: left;
+  }
+
+@media (max-width: 1000px) {
+  li {
+    float: none;
+  }
+
+  h1 {
+    visibility: hidden;
+  }
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+li a:hover {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #207DA8;
+    color: #B3E0F3;
+  }
+
+#desc {
+  max-width: 80%;
+}
+.flexcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-flow: nowrap;
+  flex-direction: column;
+  background: hsl(186, 31%, 88%);
+}

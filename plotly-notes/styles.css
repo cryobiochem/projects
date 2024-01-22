@@ -1,0 +1,158 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 60px 60px 60px;
+  text-align: center;
+  background:#36486b;
+  color: white;
+  font-size: 30px;
+
+}
+
+h1 {
+  font-size: 120px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  transition: 0.7s;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: -5.7%;
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-weight: lighter;
+  padding-left: 150px;
+  transition: 0.7s;
+}
+
+h3 {
+  font-size: 48px;
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-weight: lighter;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+  background-color: rgba(54, 72, 107, 0.05);
+  border-radius: 1vh;
+  min-width: 25vw;
+  max-width: 99%;
+  margin: 50px auto;
+
+}
+
+
+.box {
+  -border-color: black;
+  -border-width: 1px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  -background-color: #f0f0f0;
+}
+
+.box img {
+   width: 100%;
+   margin: 0 auto;
+ }
+
+.box:nth-child(even) {
+}
+
+.wrapper {
+  margin-top: 40px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: auto;
+  max-width: 100%;
+  align-items: center;
+  text-align: center;
+  -background: rgba(114, 186, 94, 0.05);
+}
+
+footer {
+  text-align: center;
+  color: black;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 26px;
+  font-weight: lighter;
+  padding: 20px;
+}
+
+iframe {
+  -background: black;
+  -max-width: 100%;
+  height: 1920px;
+  width: 1080px;
+  overflow-y: visible;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style the navbar */
+#navbar {
+ overflow: hidden;
+ background-color: #333;
+ z-index: 2222;
+ opacity: 0.98;
+}
+
+/* Navbar links */
+#navbar a {
+ float: left;
+ display: block;
+ color: #f2f2f2;
+ font-family: 'Roboto', sans-serif;
+ font-size: 18px;
+ text-align: center;
+ padding: 14px;
+ text-decoration: none;
+}
+
+#navbar a:hover {
+ float: left;
+ display: block;
+ color: hsl(203, 100%, 72%);
+ font-family: 'Roboto', sans-serif;
+}
+
+#navbar a:active {
+  background-color: #666;
+  transition: 0.2s;
+}
+
+.sectiontitle {
+  display:block;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active {
+ -background-color: #666;
+ color: white;
+}
+
+
+/* Page content */
+.content {
+ padding: 12px;
+ align-items: center;
+ text-align: center;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+ position: fixed;
+ top: 0;
+ width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+ padding-top: 60px;
+}

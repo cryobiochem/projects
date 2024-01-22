@@ -1,0 +1,103 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-gap: 10px;
+  width: 100%;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+
+.main-section {
+  display: flex;
+  margin-left: 260px;
+  flex-direction: column;
+  max-width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 4px;
+  margin-right: 15px;
+}
+
+code {
+  border-radius: 1vh;
+  background-color: lightgray;
+  padding: 10px;
+  text-align: left;
+  display: inherit;
+  margin: 6px;
+}
+
+header {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+#navbar {
+  height: 100%;
+  width: auto;
+  text-align: center;
+  line-height: 35px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1vh;
+  position: static;
+
+  width: 250px;
+  position: fixed;
+  height: 100%;
+
+
+  background: rgba(54, 72, 107, 1); /* Black*/
+  border-radius: 10px;
+  color: white;
+
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+section {
+  max-width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navbar {
+    display: fixed;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    top: 0;
+    width: 98.5%;
+    overflow-y: hidden;
+    height: auto;
+  }
+
+  #TOC {
+    visibility: collapse;
+  }
+
+  a {
+    margin: 0 auto;
+      font-size: 5vh;
+  }
+
+  .main-section {
+    display: flex;
+    margin-left: 0px;
+    margin-top: 50px;
+}
