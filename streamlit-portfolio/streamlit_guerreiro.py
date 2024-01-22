@@ -53,7 +53,7 @@ aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
 
 with aboutme:
     ### TIMELINE
-    with open('streamlit-portoflio/timeline.json', "r") as f:
+    with open('streamlit-portfolio/timeline.json', "r") as f:
         data = f.read()
     timeline(data, height=600)
     
