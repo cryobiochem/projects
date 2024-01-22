@@ -1,10 +1,5 @@
 import streamlit as st  # 🎈 data web app development
 from streamlit_timeline import timeline
-import numpy as np
-import pandas as pd  # read csv, df manipulation
-import plotly.express as px  # interactive charts
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
 
 ### METADATA
 st.set_page_config(
