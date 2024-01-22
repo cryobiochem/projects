@@ -1,2 +1,2 @@
 streamlit_timeline
-plotly==5.18.0
+plotly==5.9.0
