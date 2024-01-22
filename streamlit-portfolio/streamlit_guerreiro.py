@@ -19,9 +19,9 @@ st.set_page_config(
 st.sidebar.markdown('<div style="text-align: left; margin-bottom: 12px"><a href="https://guerreiro.streamlit.app/">''<img src="https://i.imgur.com/t3cH48K.png" alt="Bruno M. Guerreiro" width="250">'
     '</a></div>', unsafe_allow_html=True)
 st.sidebar.markdown("##### A personal portfolio project © 2024.")
-st.sidebar.caption("I am a Biochemistry Ph.D. with 7 years of experience in cryopreservation research. Due to the constant problem-solving skills needed, I had to teach myself Python, Data Science and ML to solve my research problems."
-                    "These learned tools granted me 8 research papers, 7 awards and 3 fellowships, including a research opportunity at UC-Berkeley (USA). I'm an avid and quick learner, with a preference for computer vision projects, interactive web models."
-                    "In my free time, I attempt Kaggle datasets & teach myself the piano.")
+st.sidebar.caption("I am a Biochemistry Ph.D. with 7 years of experience in cryopreservation. The constant problem-solving had me teach myself Python, Data Science and ML to solve my research problems. "
+                    "These tools granted me 8 research papers, 7 awards and 3 fellowships, including a stay at the prestigious UC-Berkeley (USA). "
+                    "I'm a fast learner with a passion for computer vision algorithms & interactive web models. In my free time, I attempt Kaggle datasets & teach myself the piano.")
     
 # Create 4 columns for the logos with reduced spacing
 gmail, scholar, github, linkedin, c5, c6, c7, c8 = st.sidebar.columns(8)
