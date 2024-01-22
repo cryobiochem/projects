@@ -1,6 +1,2 @@
 streamlit_timeline
-plotly.express
-plotly.graph_objects
-numpy
-pandas
-plotly.py
+plotly==5.18.0
