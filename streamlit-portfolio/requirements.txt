@@ -1,6 +1,2 @@
 streamlit_timeline
-numpy
-pandas
-scikit-learn
-plotly
 
