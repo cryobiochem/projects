@@ -1,4 +1,5 @@
 streamlit_timeline
-plotly==4.14.3
 plotly.express
 plotly.graph_objects
+numpy
+pandas
