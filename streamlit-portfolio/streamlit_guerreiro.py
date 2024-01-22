@@ -949,33 +949,7 @@ with ds:
         st.plotly_chart(fig, use_container_width=True, theme="streamlit")
         
     with st.container(border=True):
-        data = pd.read_excel("streamlit-portfolio/data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
-        monomers = pd.read_excel("streamlit-portfolio/data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
-        monomers = monomers.iloc[:, 2:]
-
-        # Create a list of cationic, anionic, and uncharged monomers for composition radar charts
-        cationic = []
-        anionic = []
-        neutral = []
-
-        for i in monomers.index:
-            monomer = monomers['Monomer'][i]
-            charge = monomers['Expected Charge'][i]
-            if charge == -1:
-                anionic.append(monomer)
-            elif charge == 1:
-                cationic.append(monomer)
-            else:
-                neutral.append(monomer)
-
-        # Obtain list of columns in molar ratio/weight percentage
-        composition = pd.Series(
-            ["Glc", "Man", "Gal", "Alt", "GlcN", "ManNAc", "GalNAc", "GulNAc", "GlcN", "ManN", "GalN", "GlcA", "GalA",
-             "Rha", "Fuc", "QuiNAc", "FucNAc", "Ara", "Xyl", "Rib", "LDmanHep", "Kdo", "DDmanHep", "Api", "Fru"])
-
-
         ### RADAR CHART OF MONOMER POLARITY IN EXTREMOPHILIC EPS
-
         def percentage(part, whole):
             # Transform absolute data in axis to % of max
             return 100 * float(part) / float(whole)
@@ -1125,12 +1099,6 @@ with ds:
         fig.data[2].visible = True  # <------ display neutral region
 
         st.plotly_chart(fig, use_container_width=True, theme=None)
-
-
-
-
-
-
 
 
 st.write('---')
