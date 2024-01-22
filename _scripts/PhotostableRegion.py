@@ -1,6 +1,6 @@
-### This code snippet utilizes Python libraries such as NumPy, Pandas, Matplotlib, Seaborn, and Plotly 
-### to create and visualize data related to the photostability of substances under different concentrations 
-### and exposure times to UVA and UVB radiation.
+# This code snippet utilizes Python libraries such as NumPy, Pandas, Matplotlib, Seaborn, and Plotly 
+# to create and visualize data related to the photostability of substances under different concentrations 
+# and exposure times to UVA and UVB radiation.
 
 import numpy as np
 import pandas as pd
