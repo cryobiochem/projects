@@ -1,3 +1,4 @@
 streamlit_timeline
 plotly==4.14.3
-express
+plotly.express
+plotly.graph_objects
