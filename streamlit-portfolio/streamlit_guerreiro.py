@@ -1,5 +1,5 @@
 import streamlit as st  # 🎈 data web app development
-from streamlit_timeline import st_timeline
+from streamlit_timeline import timeline
 import numpy as np
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
