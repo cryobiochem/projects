@@ -5,7 +5,7 @@
 
 ### *(This is an outdated implementation of [my portfolio](https://guerreiro.streamlit.app), but was the initial prototyping idea.)*
 
-Welcome to *Interactive Cryo*, the first HTML/CSS project by Bruno Guerreiro. 
+Welcome to *Interactive Cryo*, the first HTML/CSS project by Bruno Guerreiro.
 This repository contains code for a web application that gamifies biophysics, 
 focusing on polymer biophysics in cryopreservation. This project serves as a sample 
 portfolio landing page developed as part of the Web Responsive Design course on freeCodeCamp.
