@@ -4,3 +4,4 @@ openpyxl
 numpy
 pandas
 base64
+altair
