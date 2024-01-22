@@ -1,4 +1,11 @@
 import streamlit as st  # 🎈 data web app development
+from streamlit_timeline import timeline
+import numpy as np
+import pandas as pd  # read csv, df manipulation
+import plotly.express as px  # interactive charts
+import base64
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
 ### METADATA
 st.set_page_config(
@@ -51,8 +58,10 @@ aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
 
 
 with aboutme:
-    st.write('debugging')
-
+    ### TIMELINE
+    with open('timeline.json', "r") as f:
+        data = f.read()
+    timeline(data, height=600)
 with certs:
     c1_img, c1_text = st.columns([2,5])
     with c1_img:
