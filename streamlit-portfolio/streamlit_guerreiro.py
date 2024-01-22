@@ -1,10 +1,12 @@
-import streamlit as st  # 🎈 data web app development
+import streamlit as st 
 from streamlit_timeline import timeline
 import numpy as np
-import pandas as pd  # read csv, df manipulation
-import plotly.express as px  # interactive charts
-from plotly.subplots import make_subplots
+import pandas as pd
+import plotly.express as px
 import plotly.graph_objects as go
+import openpyxl
+import base64
+from plotly.subplots import make_subplots
 
 ### METADATA
 st.set_page_config(
@@ -17,10 +19,10 @@ st.set_page_config(
 st.sidebar.markdown('<div style="text-align: left; margin-bottom: 12px"><a href="https://guerreiro.streamlit.app/">''<img src="https://i.imgur.com/t3cH48K.png" alt="Bruno M. Guerreiro" width="250">'
     '</a></div>', unsafe_allow_html=True)
 st.sidebar.markdown("##### A personal portfolio project © 2024.")
-st.sidebar.caption('Bruno M. Guerreiro is a Biochemistry Ph.D. with 7 years of experience in cryopreservation research. '
-           'Bruno is an internationally renowned scientist, with **9** scientific publications, **10** conference participations, **7** awards and **3** fellowships. '
-           'With a life sciences background, Bruno is also a self-growth enthusiast, having accumulated a total of **23 online certifications** in Data Science, Deep Learning, TensorFlow and complementary fields.')
-
+st.sidebar.caption("I am a Biochemistry Ph.D. with 7 years of experience in cryopreservation. The constant problem-solving had me teach myself Python, Data Science and ML to solve my research problems. "
+                    "These tools granted me 8 research papers, 7 awards and 3 fellowships, including a stay at the prestigious UC-Berkeley (USA). "
+                    "I'm a fast learner with a passion for computer vision algorithms & interactive web models. In my free time, I attempt Kaggle datasets & teach myself the piano.")
+    
 # Create 4 columns for the logos with reduced spacing
 gmail, scholar, github, linkedin, c5, c6, c7, c8 = st.sidebar.columns(8)
 
@@ -43,7 +45,6 @@ st.sidebar.write('')
 # Resume/CV download button
 st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AUc-mr9IdBV0s2oNr9koOjYp5Wig6F4O_dhDGJS_bpYbGOeQIzCkLCQSWYV-nC3-IH4CkRIJWpzA" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download Resume/CV</button></a>', unsafe_allow_html=True)
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
-st.sidebar.info("⚠️ For optimal website experience, use light theme & wide mode.")
 
 ### CONTENT
 aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
@@ -58,9 +59,10 @@ aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
 
 with aboutme:
     ### TIMELINE
-    with open('timeline.json', "r") as f:
+    with open('streamlit-portfolio/timeline.json', "r") as f:
         data = f.read()
     timeline(data, height=600)
+
 with certs:
     c1_img, c1_text = st.columns([2,5])
     with c1_img:
@@ -165,6 +167,10 @@ with certs:
         with col3: st.info("e-Commerce")
         with col4: st.info("SEO")
         with col5: st.info("ROI")
+
+
+
+
 with phd:
     st.header("My Ph.D. Journey")
     st.caption("I have a strong background in life sciences and scientific research, having accumulated 10 years of constant critical thinking and problem-solving capabilities, and almost 7 years of theoretical and applied research focus."
@@ -208,10 +214,17 @@ with phd:
     st.subheader("Some of my contributions (+ visuals)")
     with st.container(border=True):
         st.image("https://i.imgur.com/N74iMeP.jpg")
+
+
+
+
+
+
+
 with ds:
-    data = pd.read_csv("./data/streamlit-poldb.csv")
-    monomers = pd.read_csv("./data/streamlit-mondb.csv")
-    year_df = pd.read_excel("data/year.xlsx")
+    data = pd.read_csv("streamlit-portfolio/data/streamlit-poldb.csv")
+    monomers = pd.read_csv("streamlit-portfolio/data/streamlit-mondb.csv")
+    year_df = pd.read_excel("streamlit-portfolio/data/year.xlsx")
 
     data = data[:].iloc[:, 0:158]
     identity = data.iloc[:, :11]
@@ -392,12 +405,14 @@ with ds:
         fig.update_layout(title="<b>Phylum distribution by extremophilic type</b>")
 
         st.plotly_chart(fig, use_container_width=True, theme=None)
+        
     with st.container(border=True):
         resp_count = data.groupby('ExtremeType')['Respiration'].value_counts()
         resp_count = pd.DataFrame(resp_count)
         # Reorganize the Phylum dataframe
         resp_count.reset_index(inplace=True)
         resp_count.columns = ['ExtremeType', 'Respiration', 'Count']
+        
         # --------------------------
         # make subplots of each phylum
         # --------------------------
@@ -473,8 +488,8 @@ with ds:
         fig.add_trace(go.Pie(labels=haLabelsR, values=haCountR), 2, 3)
 
         fig.update_layout(title="<b>Phylum distribution by type of respiratory metabolism</b>")
-
         st.plotly_chart(fig, use_container_width=True, theme=None)
+
     with st.container(border=True):
         # --------------------------
         # Choropleth data cleaning
@@ -703,6 +718,7 @@ with ds:
             margin=dict(l=0, r=0, t=50, b=0))
 
         st.plotly_chart(fig, use_container_width = True, theme = None)
+        
     with st.container(border=True):
         metricsByType = pd.DataFrame(identity['ExtremeType']).join(biometrics)
 
@@ -866,9 +882,10 @@ with ds:
         fig.update_layout(title_text='<b>Salinity</b> range for every extremophilic type',
                           xaxis_title='Salinity (%)')
         st.plotly_chart(fig, use_container_width=True, theme = None)
+        
     with st.container(border=True):
-        data = pd.read_excel("data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
-        monomers = pd.read_excel("data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
+        data = pd.read_excel("streamlit-portfolio/data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
+        monomers = pd.read_excel("streamlit-portfolio/data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
         monomers = monomers.iloc[:, 2:]
 
         # Create a list of cationic, anionic, and uncharged monomers for composition radar charts
@@ -930,34 +947,9 @@ with ds:
         fig.update_xaxes(tickangle=35)
 
         st.plotly_chart(fig, use_container_width=True, theme="streamlit")
+        
     with st.container(border=True):
-        data = pd.read_excel("data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
-        monomers = pd.read_excel("data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
-        monomers = monomers.iloc[:, 2:]
-
-        # Create a list of cationic, anionic, and uncharged monomers for composition radar charts
-        cationic = []
-        anionic = []
-        neutral = []
-
-        for i in monomers.index:
-            monomer = monomers['Monomer'][i]
-            charge = monomers['Expected Charge'][i]
-            if charge == -1:
-                anionic.append(monomer)
-            elif charge == 1:
-                cationic.append(monomer)
-            else:
-                neutral.append(monomer)
-
-        # Obtain list of columns in molar ratio/weight percentage
-        composition = pd.Series(
-            ["Glc", "Man", "Gal", "Alt", "GlcN", "ManNAc", "GalNAc", "GulNAc", "GlcN", "ManN", "GalN", "GlcA", "GalA",
-             "Rha", "Fuc", "QuiNAc", "FucNAc", "Ara", "Xyl", "Rib", "LDmanHep", "Kdo", "DDmanHep", "Api", "Fru"])
-
-
         ### RADAR CHART OF MONOMER POLARITY IN EXTREMOPHILIC EPS
-
         def percentage(part, whole):
             # Transform absolute data in axis to % of max
             return 100 * float(part) / float(whole)
@@ -1107,113 +1099,7 @@ with ds:
         fig.data[2].visible = True  # <------ display neutral region
 
         st.plotly_chart(fig, use_container_width=True, theme=None)
-with gd:
-    st.header("Graphic Design")
-    st.caption(
-        "Complex, accurate demonstrations are essential to convey messages that extend beyond the dimensions of written text. Scientific research in particular benefits"
-        " immensely from reliable data visualization, proper color reporting, appropriate choice of graph types, easily interpretable representations during public speaking, "
-        "and illustrating very succintly the core results of research in a graphical abstract which often accompanies the publication of a scientific paper.")
 
-    with st.container(border=True):
-        st.markdown("Skills demonstrated in this section:")
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col1: st.info("Adobe Illustrator")
-        with col2: st.info("Photoscape X")
-        with col3: st.info("GraphPad Prism")
-        with col4: st.info("MS Powerpoint")
-        with col5: st.info("Creative Content")
-
-    # Multiselect for selecting chapters
-    selected_chapters = st.selectbox("Select content to visualize:",
-                                       ["Choose here...",
-                                        "Pão Nosso news project",
-                                        "MDPI Polymers 2021 Best Cover Paper Award",
-                                        "Community Content Creation"])
-
-    # Display the content of selected chapters
-    if "Pão Nosso news project" in selected_chapters:
-        st.header("Pão Nosso News")
-        st.caption("The **Pão Nosso News**, a pun of Portuguese origin alluding to *'our everyday bread (or chunk, of information'*, was a daily and weekly digital newspaper curation project, initially designed to disseminate information to teenagers, in one minute or less. The goal involved producing appealing graphic visualizations of the state of affair in Portugal and the world that teens would find captivating. Social media is populated by viralized content that is filtered by algorithms intended to capture attention. This project aimed to re-populate the Instagram feed of teenagers with meaningful content that could contribute towards a more well-informed, intellectual society of the future.")
-
-        st.subheader("Official logotyping")
-        st.image("https://i.imgur.com/uYLJZkh.png", width=500)
-
-        st.divider()
-        st.subheader("Highlights artwork")
-        st.image("https://i.imgur.com/2wnwYs7.png")
-        st.divider()
-        st.subheader("Daily panel templating (Instagram 9x16 story format)")
-        st.image("https://i.imgur.com/D7gctJb.png")
-        st.divider()
-        st.subheader("Weekly panel templating (Instagram 1x1 post format)")
-        st.image("https://i.imgur.com/ZNZ7GGH.png")
-        st.divider()
-        st.subheader("Final result")
-        st.image("https://i.imgur.com/bC2pDzf.png")
-
-    if "MDPI Polymers 2021 Best Cover Paper Award" in selected_chapters:
-        st.image("https://i.imgur.com/JyWJvs0.jpg")
-    if "Community Content Creation" in selected_chapters:
-        st.image("https://i.postimg.cc/c17KFZ2L/atc1.png")
-        st.image("https://i.postimg.cc/VLYJTpPB/atc2.png")
-        st.image("https://i.postimg.cc/fThcb8nJ/atc3.png")
-        st.image("https://i.postimg.cc/tTx6qxB3/atc4.png")
-        st.image("https://i.postimg.cc/SKj8P58t/atc5.png")
-        st.image("https://i.postimg.cc/wBb5THgp/atc6.png")
-with tw:
-    st.header("Technical Writing")
-    st.caption("Performing research in life sciences requires precision and thoroughness in experimental etiquette. However, proper documentation of findings and"
-               " description of equipment, systems and *modus operandi* is essential. Here you can find some examples of technical writing, which required a thorough description"
-               "of hardware building, software writing, and methodologies to guarantee the reproducibility of research findings and insights.")
-
-    with st.container(border=True):
-        st.markdown("Skills demonstrated in this section:")
-        c1,c2,c3,c4 = st.columns(4)
-        c1.info("Technical Knowledge")
-        c2.info("Proofreading")
-        c3.info("Word / LaTeX")
-
-    # Multiselect for selecting chapters
-    selected_chapters = st.multiselect("Select content to visualize:", ["Choose here...",
-                                                                        "Isochoric Nucleation Detection: Build, architecture, Python-automated workflows",
-                                                                        "Data Science tools applied to Life Sciences"])
-
-    # Display the content of selected chapters
-    if "Isochoric Nucleation Detection: Build, architecture, Python-automated workflows" in selected_chapters:
-        st.markdown("#### Isochoric Nucleation Detection: Build, architecture, Python-automated workflows")
-
-        with open("./data/inde.pdf", "rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-
-        pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="85%" height="800" style="display: block; margin: 0 auto;" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
-
-    if "Data Science tools applied to Life Sciences" in selected_chapters:
-        st.markdown("#### Data Science tools applied to Life Sciences: scraping, loading, analysis, modelling, visualization")
-
-        with open("./data/datasciencetools.pdf", "rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-
-        pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="85%" height="800" style="display: block; margin: 0 auto;" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
-with proj:
-    st.header("Projects")
-    st.caption("In this section you'll find DIY projects that I've created as a direct application of my skills. Some have been developed for practical purposes, mainly for "
-               "my Ph.D. work, others were developed as a proof-of-concept that I could convert the learned knowledge into something practical and useful.")
-
-    # Multiselect for selecting chapters
-    selected_chapters = st.selectbox("Select content to visualize:",
-                                     ["Choose here...",
-                                      "Crystal.AI Computer Vision Algorithm",
-                                      "CryoPod",
-                                      "Isochoric Nucleation Detection",
-                                      "Discord Bots"])
-with media:
-    st.header("Media")
-    st.caption("During my career, I have participated in several outreach activities, out of excitement to communicate and teach what I'm passionate for. This involved volunteer lectures,"
-               "ambassadorial participations, being interviewed for national newspapers and participating in podcasts. Find here the relevant media outreach where I was privileged to share my contributions so far.")
-
-    st.write("'Organs with longer shelf-life', in print, Expresso journal")
 
 st.write('---')
 st.markdown('<div style="text-align: right;"><sub>Bruno M. Guerreiro © 2024</sub></div>', unsafe_allow_html=True)
