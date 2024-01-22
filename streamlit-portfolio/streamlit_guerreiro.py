@@ -1,9 +1,7 @@
 import streamlit as st 
 from streamlit_timeline import timeline
 import numpy as np
-import pandas as pd 
-import base64
-from plotly.subplots import make_subplots
+import pandas as pd
 import plotly.graph_objects as go
 
 ### METADATA
