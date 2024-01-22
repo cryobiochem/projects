@@ -5,6 +5,7 @@ import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import base64
 import altair as alt
 from datetime import time, datetime # to simulate a real time data, time loop
 
