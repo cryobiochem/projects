@@ -2,7 +2,7 @@
 
 ### *(This is an outdated implementation of [my portfolio](https://guerreiro.streamlit.app), but was a second prototyping idea.)*
 
-**plot**notes is a HTML/CSS project that provides a graphical medium for note-taking using Dash implementations of Python code.
+**plot**notes is a HTML/CSS project that provides a graphical medium for note-taking using Python data visualization using Dash.
 It allows users to create visual notes by combining text, images, and plots. The project is designed to enhance the note-taking experience, 
 especially for topics that involve data visualization and analysis and was created for reporting scientific information in a minimalistic, visually-appealing way.
 
