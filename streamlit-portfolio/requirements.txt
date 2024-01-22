@@ -1,2 +1,5 @@
 streamlit_timeline
 plotly==5.9.0
+openpyxl
+numpy
+pandas
