@@ -43,7 +43,7 @@ linkedin.markdown('<div style="text-align: left"><a href="https://www.linkedin.c
 st.sidebar.write('')
 
 # Resume/CV download button
-st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AUc-mr9IdBV0s2oNr9koOjYp5Wig6F4O_dhDGJS_bpYbGOeQIzCkLCQSWYV-nC3-IH4CkRIJWpzA" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download Resume/CV</button></a>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AUc-mr9IdBV0s2oNr9koOjYp5Wig6F4O_dhDGJS_bpYbGOeQIzCkLCQSWYV-nC3-IH4CkRIJWpzA" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download CV</button></a>', unsafe_allow_html=True)
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
 
 ### CONTENT
@@ -165,9 +165,6 @@ with certs:
         with col4: st.info("SEO")
         with col5: st.info("ROI")
 
-
-
-
 with phd:
     st.header("My Ph.D. Journey")
     st.caption("I have a strong background in life sciences and scientific research, having accumulated 10 years of constant critical thinking and problem-solving capabilities, and almost 7 years of theoretical and applied research focus."
@@ -211,12 +208,6 @@ with phd:
     st.subheader("Some of my contributions (+ visuals)")
     with st.container(border=True):
         st.image("https://i.imgur.com/N74iMeP.jpg")
-
-
-
-
-
-
 
 with ds:
     data = pd.read_csv("streamlit-portfolio/data/streamlit-poldb.csv")
@@ -1097,6 +1088,22 @@ with ds:
 
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
+with proj:
+    # Function to create a container with title, image, and description
+    def create_project_container(title, image_url, description):
+        st.markdown(f"### {title}")
+        st.write(description)
+        st.image(image_url, use_column_width=True)
+        st.write("---")
+
+
+    create_project_container("[crystal.ai](https://github.com/cryobiochem/crystal.ai)", "https://private-user-images.githubusercontent.com/33891979/298573603-5d60e1d0-a990-4b5b-a409-899d9e75bfbd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU5Njg0MjEsIm5iZiI6MTcwNTk2ODEyMSwicGF0aCI6Ii8zMzg5MTk3OS8yOTg1NzM2MDMtNWQ2MGUxZDAtYTk5MC00YjViLWE0MDktODk5ZDllNzViZmJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTIzVDAwMDIwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYxYWM3ZTQ1YjkzNzcwNzBhNjk4OTE1NmZiOTc1MDA4ZWQ1ODg0MWNmMjMzNWMxZTFjNTU4NWQxNGE1ODc4N2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.S1rIdm2eC_a8sl0R2HCGg2MG-ZuFxQz0u7Eozq_q3Gs", "Computer vision algorithm able to detect and classify crystals generated in the presence of certain molecules.")
+
+
+    create_project_container("[Click&Cluster](https://cryobiochem.shinyapps.io/ClickAndCluster/)", "https://i.imgur.com/lkwWcuc.png", "Interactive drawing board with automated K-means clustering algorithm for data classification.")
+
+
+    create_project_container("[AladdiNLP](https://cryobiochem.shinyapps.io/AladdiNLP/)", "https://i.imgur.com/WjeHJtH.png", "Word recommender system based on NLP, with N-gram tokenization from Twitter, blog posts and news articles.")
 
 st.write('---')
 st.markdown('<div style="text-align: right;"><sub>Bruno M. Guerreiro © 2024</sub></div>', unsafe_allow_html=True)
