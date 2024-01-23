@@ -1097,7 +1097,7 @@ with proj:
         st.write("---")
 
 
-    create_project_container("[crystal.ai](https://github.com/cryobiochem/crystal.ai)", "https://private-user-images.githubusercontent.com/33891979/298573603-5d60e1d0-a990-4b5b-a409-899d9e75bfbd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU5Njg0MjEsIm5iZiI6MTcwNTk2ODEyMSwicGF0aCI6Ii8zMzg5MTk3OS8yOTg1NzM2MDMtNWQ2MGUxZDAtYTk5MC00YjViLWE0MDktODk5ZDllNzViZmJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTIzVDAwMDIwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYxYWM3ZTQ1YjkzNzcwNzBhNjk4OTE1NmZiOTc1MDA4ZWQ1ODg0MWNmMjMzNWMxZTFjNTU4NWQxNGE1ODc4N2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.S1rIdm2eC_a8sl0R2HCGg2MG-ZuFxQz0u7Eozq_q3Gs", "Computer vision algorithm able to detect and classify crystals generated in the presence of certain molecules.")
+    create_project_container("[crystal.ai](https://github.com/cryobiochem/crystal.ai)", "https://i.imgur.com/Huh4fMt.jpg", "Computer vision algorithm able to detect and classify crystals generated in the presence of certain molecules.")
 
 
     create_project_container("[Click&Cluster](https://cryobiochem.shinyapps.io/ClickAndCluster/)", "https://i.imgur.com/lkwWcuc.png", "Interactive drawing board with automated K-means clustering algorithm for data classification.")
