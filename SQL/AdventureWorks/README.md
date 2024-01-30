@@ -1,4 +1,4 @@
-# Adventure Works: Data Warehouse Implementation
+# Data Warehouse Implementation in SQL-SSIS
 - Tools: SQL + SSIS + SSAS + PowerBI
 - Author: Bruno M. Guerreiro
 - Date: 26/Jan/2024
