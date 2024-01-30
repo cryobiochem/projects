@@ -11,33 +11,45 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{314F5B00-BE93-4AD3-8525-AFF340818645}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{A0D11679-6BAE-4630-BDF7-5937B3D75FF0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AdventureWorks2022.mdf]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AdventureWorks2022]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3C58EA78-81EB-417A-AE26-6C0BFA5C2717}"
-      DTS:ObjectName="C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AdventureWorks2022.mdf">
+      DTS:DTSID="{73BBE023-3021-4183-8FCE-04A4A09546DC}"
+      DTS:ObjectName="DESKTOP-OAUQ895\SQLEXPRESS.AdventureWorks2022">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AdventureWorks2022.mdf;Provider=Microsoft.ACE.OLEDB.16.0;" />
+          DTS:ConnectionString="Data Source=DESKTOP-OAUQ895\SQLEXPRESS;Initial Catalog=AdventureWorks2022;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{73BBE023-3021-4183-8FCE-04A4A09546DC}DESKTOP-OAUQ895\SQLEXPRESS.AdventureWorks2022;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AW_staging.mdf1]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AW_DWH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{DA030384-AB4C-4765-AF90-2DEB2BB4035B}"
-      DTS:ObjectName="C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AW_staging.mdf1">
+      DTS:DTSID="{81474E60-98F9-4C14-8FEC-9E00FAF7D3A8}"
+      DTS:ObjectName="DESKTOP-OAUQ895\SQLEXPRESS.AW_DWH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AW_staging.mdf;Provider=Microsoft.ACE.OLEDB.16.0;" />
+          DTS:ConnectionString="Data Source=DESKTOP-OAUQ895\SQLEXPRESS;Initial Catalog=AW_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{81474E60-98F9-4C14-8FEC-9E00FAF7D3A8}DESKTOP-OAUQ895\SQLEXPRESS.AW_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AW_staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{50D9EA6A-EC64-45ED-A51A-6AB1CE048129}"
+      DTS:ObjectName="DESKTOP-OAUQ895\SQLEXPRESS.AW_staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-OAUQ895\SQLEXPRESS;Initial Catalog=AW_staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{50D9EA6A-EC64-45ED-A51A-6AB1CE048129}DESKTOP-OAUQ895\SQLEXPRESS.AW_staging;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -83,7 +95,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
+                      name="OpenRowset">[Person].[Address]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -118,8 +130,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Address\Address (OLTP).Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AdventureWorks2022.mdf]"
-                      connectionManagerRefId="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AdventureWorks2022.mdf]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AdventureWorks2022]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AdventureWorks2022]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -127,14 +139,191 @@
                     <output
                       refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressID]"
+                          name="AddressID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                          length="60"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                          name="AddressLine1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                          length="60"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                          name="AddressLine2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          length="30"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                          name="StateProvinceID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[PostalCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                          length="15"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[PostalCode]"
+                          name="PostalCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[SpatialLocation]"
+                          dataType="image"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[SpatialLocation]"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[SpatialLocation]"
+                          name="SpatialLocation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[rowguid]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[rowguid]"
+                          name="rowguid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                          name="ModifiedDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
                       <externalMetadataColumns
-                        isUsed="True" />
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                          dataType="i4"
+                          name="AddressID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="30"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                          dataType="i4"
+                          name="StateProvinceID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          name="PostalCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[SpatialLocation]"
+                          dataType="image"
+                          name="SpatialLocation" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                          dataType="guid"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                      </externalMetadataColumns>
                     </output>
                     <output
                       refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressID]"
+                          name="AddressID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                          name="AddressLine1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                          name="AddressLine2" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                          name="StateProvinceID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                          name="PostalCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[SpatialLocation]"
+                          dataType="image"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[SpatialLocation]"
+                          name="SpatialLocation" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                          dataType="guid"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                          name="rowguid" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                          name="ModifiedDate" />
                         <outputColumn
                           refId="Package\Sequence Container\Address\Address (OLTP).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -168,7 +357,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
+                      name="OpenRowset">[erp].[PersonAddress]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -211,8 +400,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Address\Address (Staging).Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AW_staging.mdf1]"
-                      connectionManagerRefId="Package.ConnectionManagers[C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\AW_staging.mdf1]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AW_staging]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-OAUQ895\SQLEXPRESS.AW_staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -224,7 +413,55 @@
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <externalMetadataColumns
-                        isUsed="True" />
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[AddressID]"
+                          dataType="i4"
+                          name="AddressID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[AddressTypeID]"
+                          dataType="i4"
+                          name="AddressTypeID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                          dataType="guid"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="30"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          name="PostalCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceID]"
+                          dataType="i4"
+                          name="StateProvinceID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[Created_Dt]"
+                          dataType="dbTimeStamp"
+                          name="Created_Dt" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Address\Address (Staging).Inputs[OLE DB Destination Input].ExternalColumns[SSISTrackId]"
+                          dataType="i4"
+                          name="SSISTrackId" />
+                      </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
@@ -275,7 +512,9 @@
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{73BBE023-3021-4183-8FCE-04A4A09546DC}"
+              SQLTask:SqlStatementSource="truncate table [AW_staging].[erp].[PersonAddress]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -617,7 +856,7 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="143,42"
+          Size="116,42"
           Id="Package\Sequence Container\Address"
           TopLeft="5.50000000000001,107.5" />
         <NodeLayout
@@ -630,14 +869,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-13.5,60"
               Start="0,0"
-              End="0,52.5">
+              End="-13.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-9.49999999999999,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.49999999999999,30"
+                    Point2="-13.5,30"
+                    Point3="-13.5,34" />
+                  <mssgle:LineSegment
+                    End="-13.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
