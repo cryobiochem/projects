@@ -1322,27 +1322,27 @@ with cnt:
         # Display the plot
         st.plotly_chart(fig, use_container_width=True)
 
-        #st.write('The $\Delta r$ value for the homogenous curve is:')
-        #st.write('The $\Delta r$ value for the heterogenous curve is:')
-        #st.write('The $\Delta r$ ratio between both curve is:')
+        #st.write('The $\$\Delta R$$ value for the homogenous curve is:')
+        #st.write('The $\$\Delta R$$ value for the heterogenous curve is:')
+        #st.write('The $\$\Delta R$$ ratio between both curve is:')
 
         #st.write('Conclusions on heterogenous nucleation:')
         #st.markdown('- It effectively reduces the energy barrier.')
         #st.markdown('- Only high contact angles preserve the anti-nucleation effect, which makes sense.')
         #st.markdown('- $r^*$ is the same, which agrees with barely unchanged average $T_n$ data')
-        #st.markdown('- $r_{eq}$ is the same and $\Delta r$ unchanged, which :red[does not agree] with observation. WAIT!')
+        #st.markdown('- $r_{eq}$ is the same and $\$\Delta R$$ unchanged, which :red[does not agree] with observation. WAIT!')
 
     with st.expander("Zeldovich factor $Z$"):
 
         st.write(
-            'The size interval $\Delta r$ characterizes the energy profile around the critical size $r^*$. Two pieces of evidence and one inference point to a necessary reduction in $\Delta r$:')
+            'The size interval $\$\Delta R$$ characterizes the energy profile around the critical size $r^*$. Two pieces of evidence and one inference point to a necessary reduction in $\$\Delta R$$:')
         st.markdown('- POM experiments showed crystal sizes 10x smaller.')
         st.markdown('- Isochoric experiments showed a narrowing of $\Delta T_n$.')
         st.markdown(
             '- Inferences from rheology data and gel-induced selective polymorphism point to a reduction in crystal size distribution.')
         st.write('')
         st.write(
-            'Therefore, the $\Delta r$ component appears highly connected to $\Delta T_n$, and should equally decrease to 1/3.')
+            'Therefore, the $\$\Delta R$$ component appears highly connected to $\Delta T_n$, and should equally decrease to 1/3.')
 
 
         def calculate_curves(delta_G_v, gamma_SL, r):
@@ -1450,7 +1450,7 @@ with cnt:
         fig.add_trace(go.Scatter(x=[deltaR_min["x1 value"], deltaR_max["x2 value"]],
                                  y=[deltaR_min["y value"], deltaR_max["y value"]],
                                  mode='markers', marker=dict(color='orange', size=8),
-                                 name='Delta R'))
+                                 name='$\Delta R$'))
         fig.add_shape(type="line",
                       x0=deltaR_min["x1 value"], y0=deltaR_min["y value"],
                       x1=deltaR_max["x2 value"], y1=deltaR_max["y value"],
@@ -1473,7 +1473,7 @@ with cnt:
 
         stat1, stat2, stat3 = st.columns(3)
         with stat1: st.metric("**Thermal fluctuations (%)**", round(kT_percentage, 2))
-        with stat2: st.metric("$\Delta r$", round(deltaR, 3))
+        with stat2: st.metric("$\$\Delta R$$", round(deltaR, 3))
         with stat3: st.metric("$Z$", round(Zeldovich, 2))
 
         st.write('In another perspective, the Zeldovich factor $Z$ controls the flatness of the energy profile. For two systems having the same free energy barriers, the system with the flatter free energy landscape near the barrier has **more diffusive nucleation dynamics** and a lower nucleation rate.')
@@ -1598,7 +1598,7 @@ with cnt:
         # Plot deltaR_min and deltaR_max as orange markers and a horizontal orange line
         fig.add_trace(go.Scatter(x=[deltaR_min["x1 value"], deltaR_max["x2 value"]],
                                  y=[deltaR_min["y value"], deltaR_max["y value"]], mode='markers',
-                                 marker=dict(color='orange', size=8), name='Delta R'))
+                                 marker=dict(color='orange', size=8), name='$\Delta R$'))
         fig.add_shape(type="line", x0=deltaR_min["x1 value"], y0=deltaR_min["y value"], x1=deltaR_max["x2 value"],
                       y1=deltaR_max["y value"], line=dict(color='orange', width=2))
 
@@ -1635,7 +1635,7 @@ with cnt:
 
         st.subheader('Zeldovich factor')
 
-        #st.latex(r'\Delta r = \frac {2}{\sqrt\pi}\frac{1}{Z}')
+        #st.latex(r'\$\Delta R$ = \frac {2}{\sqrt\pi}\frac{1}{Z}')
         #st.write('where $Z$ is the Zeldovich factor:')
         #st.latex(r'Z = \frac {3(\Delta G_n)^2}{4\sqrt{\pi kT}(A\gamma_{SL})^{3/2}}')
 
