@@ -1,3 +1,4 @@
 streamlit_timeline
-plotly==5.9.0
+plotly==5.22.0
 openpyxl
+numpy==1.23
