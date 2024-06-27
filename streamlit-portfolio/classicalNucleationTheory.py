@@ -1,5 +1,4 @@
 import streamlit as st  # 🎈 data web app development
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import numpy as np  # generate numbers for functions
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
