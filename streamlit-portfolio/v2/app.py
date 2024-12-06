@@ -47,16 +47,16 @@ portfolio, certs, awards, sci, vol, st.tabs(["Portfolio",
 
 
 with portfolio:
-    st.empty()
+    st.write("---")
 
 with certs:
-    st.empty()
+    st.write("---")
     
 with awards:
-    st.empty()
+    st.write("---")
 
 with sci:
-    st.empty()
+    st.write("---")
 
 with vol:
-    st.empty()
+    st.write("---")
