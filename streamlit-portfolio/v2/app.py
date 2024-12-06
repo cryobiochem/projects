@@ -47,7 +47,77 @@ portfolio, certs, awards, sci, vol = st.tabs(["Portfolio",
 
 
 with portfolio:
-    st.write("---")
+    st.markdown("""
+        <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-title {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        .portfolio-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .portfolio-item:hover .portfolio-hover {
+            opacity: 1;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    projects = [
+        {"title": "Project 1", "image": "https://via.placeholder.com/400", "description": "Description for Project 1", "link": "https://example.com/project1"},
+        {"title": "Project 2", "image": "https://via.placeholder.com/400", "description": "Description for Project 2", "link": "https://example.com/project2"},
+        {"title": "Project 3", "image": "https://via.placeholder.com/400", "description": "Description for Project 3", "link": "https://example.com/project3"},
+        {"title": "Project 4", "image": "https://via.placeholder.com/400", "description": "Description for Project 4", "link": "https://example.com/project4"},
+    ]
+
+    # Render projects grid
+    st.markdown('<div class="portfolio-grid">', unsafe_allow_html=True)
+    for project in projects:
+        st.markdown(f"""
+            <div class="portfolio-item" onclick="window.open('{project['link']}', '_blank')">
+                <img src="{project['image']}" alt="{project['title']}">
+                <div class="portfolio-title">{project['title']}</div>
+                <div class="portfolio-hover">{project['description']}</div>
+            </div>""", unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with certs:
     st.write("---")
