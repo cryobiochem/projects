@@ -47,84 +47,38 @@ portfolio, certs, awards, sci, vol = st.tabs(["Portfolio",
 
 
 with portfolio:
-    st.write("---")
-    st.markdown("""
-        <style>
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
-            gap: 20px; /* 20px space between grid items */
-            margin-top: 20px;
-        }
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 200px; /* Fixed height for uniform squares */
-        }
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures images fit nicely */
-        }
-        .portfolio-title {
-            position: absolute;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-        }
-        .portfolio-hover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .portfolio-item:hover .portfolio-hover {
-            opacity: 1;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    # Portfolio projects
-    projects = [
-        {"title": f"Project {i+1}", "image": "https://via.placeholder.com/400", 
-         "description": f"Description for Project {i+1}", "link": f"https://example.com/project{i+1}"}
-        for i in range(16)  # 16 projects for a 4x4 grid
+    st.write("### 4x4 Grid of Rectangles")
+    
+    # Define the content for the first 4 squares and placeholders for the rest
+    content = [
+        "crystal.ai", "test", "pod", "wtf",  # First row content
+        "", "", "", "",                     # Second row placeholders
+        "", "", "", "",                     # Third row placeholders
+        "", "", "", "",                     # Fourth row placeholders
     ]
-
-    # Render projects grid
-    st.markdown('<div class="portfolio-grid">', unsafe_allow_html=True)
-    for project in projects:
-        st.markdown(f"""
-            <a href="{project['link']}" target="_blank" style="text-decoration: none;">
-                <div class="portfolio-item">
-                    <img src="{project['image']}" alt="{project['title']}">
-                    <div class="portfolio-title">{project['title']}</div>
-                    <div class="portfolio-hover">{project['description']}</div>
-                </div>
-            </a>
-        """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
+    
+    # Render the grid using st.columns
+    for i in range(4):  # Loop through 4 rows
+        cols = st.columns(4)  # Create 4 columns in this row
+        for j in range(4):  # Loop through each column
+            with cols[j]:  # Use each column
+                st.container()
+                st.markdown(
+                    f"""
+                    <div style="
+                        height: 50px; 
+                        display: flex; 
+                        align-items: center; 
+                        justify-content: center; 
+                        border: 1px solid #ddd; 
+                        border-radius: 5px; 
+                        background-color: #f9f9f9;">
+                        {content[i * 4 + j]}
+                    </div>
+                    """, 
+                    unsafe_allow_html=True
+                )
+    
 with certs:
     st.write("---")
     
