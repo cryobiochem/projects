@@ -1,6 +1,1 @@
-streamlit_timeline
-plotly==5.22.0
-openpyxl
-numpy==1.23
-streamlit==1.26.0
-pandas==1.5.3
+
