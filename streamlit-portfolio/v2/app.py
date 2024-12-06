@@ -39,7 +39,7 @@ st.sidebar.markdown(f'<a href="https://pouch.jumpshare.com/download/vP2xyACw55AU
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
 
 ### CONTENT
-portfolio, certs, awards, sci, vol, st.tabs(["Portfolio",
+portfolio, certs, awards, sci, vol = st.tabs(["Portfolio",
                                              "Certifications",
                                              "Honors & Awards",
                                              "Scientific Research",
