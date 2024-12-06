@@ -47,12 +47,13 @@ portfolio, certs, awards, sci, vol = st.tabs(["Portfolio",
 
 
 with portfolio:
+    st.write("---")
     st.markdown("""
         <style>
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 20px; /* 20px space between grid items */
             margin-top: 20px;
         }
         .portfolio-item {
@@ -62,14 +63,15 @@ with portfolio:
             cursor: pointer;
             transition: transform 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 200px; /* Fixed height for uniform squares */
         }
         .portfolio-item:hover {
             transform: scale(1.05);
         }
         .portfolio-item img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* Ensures images fit nicely */
         }
         .portfolio-title {
             position: absolute;
@@ -101,23 +103,27 @@ with portfolio:
         </style>
     """, unsafe_allow_html=True)
 
+    # Portfolio projects
     projects = [
-        {"title": "Project 1", "image": "https://via.placeholder.com/400", "description": "Description for Project 1", "link": "https://example.com/project1"},
-        {"title": "Project 2", "image": "https://via.placeholder.com/400", "description": "Description for Project 2", "link": "https://example.com/project2"},
-        {"title": "Project 3", "image": "https://via.placeholder.com/400", "description": "Description for Project 3", "link": "https://example.com/project3"},
-        {"title": "Project 4", "image": "https://via.placeholder.com/400", "description": "Description for Project 4", "link": "https://example.com/project4"},
+        {"title": f"Project {i+1}", "image": "https://via.placeholder.com/400", 
+         "description": f"Description for Project {i+1}", "link": f"https://example.com/project{i+1}"}
+        for i in range(16)  # 16 projects for a 4x4 grid
     ]
 
     # Render projects grid
     st.markdown('<div class="portfolio-grid">', unsafe_allow_html=True)
     for project in projects:
         st.markdown(f"""
-            <div class="portfolio-item" onclick="window.open('{project['link']}', '_blank')">
-                <img src="{project['image']}" alt="{project['title']}">
-                <div class="portfolio-title">{project['title']}</div>
-                <div class="portfolio-hover">{project['description']}</div>
-            </div>""", unsafe_allow_html=True)
+            <a href="{project['link']}" target="_blank" style="text-decoration: none;">
+                <div class="portfolio-item">
+                    <img src="{project['image']}" alt="{project['title']}">
+                    <div class="portfolio-title">{project['title']}</div>
+                    <div class="portfolio-hover">{project['description']}</div>
+                </div>
+            </a>
+        """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 with certs:
     st.write("---")
