@@ -172,7 +172,7 @@ with phd:
                " is often a arduous path and requires patience, determination and ambition. Backing up, defending and presenting our ideas is also a part of the research life, such that I have honed"
                "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences.")
 
-    with st.container(border=True): 
+    with st.container(): 
         st.markdown("Skills demonstrated in this section:")
         col1, col2, col3, col4, col5 = st.columns(5)
         with col1: st.info("Critical Thinking")
@@ -189,25 +189,25 @@ with phd:
     st.write("")
     st.subheader("Cryopreservation fundamentals + my approach")
     
-    with st.container(border=True):
+    with st.container():
         st.image("https://i.imgur.com/fW46l27.png")
 
     st.write("")
     st.write("")
     st.subheader("The organ transplant crisis")
-    with st.container(border=True):
+    with st.container():
         st.image("https://i.imgur.com/5f6BDf9.png")
 
     st.write("")
     st.write("")
     st.subheader("Lab work methodology")
-    with st.container(border=True):
+    with st.container():
         st.image("https://i.imgur.com/SNt2e6m.jpg")
 
     st.write("")
     st.write("")
     st.subheader("Some of my contributions (+ visuals)")
-    with st.container(border=True):
+    with st.container():
         st.image("https://i.imgur.com/N74iMeP.jpg")
 
 with ds:
@@ -243,7 +243,7 @@ with ds:
              "of the [**CryoPolDB**](http://localhost:8501/#isochoric-nucleation-detection-using-python-automated-workflows) shown in, with helpful visualizations which "
              "allow to explore deep insights in the data.")
 
-    with st.container(border=True):
+    with st.container():
         st.markdown("Skills demonstrated in this section:")
         col1, col2, col3, col4, col5, col6 = st.columns(6)
         with col1: st.info("Python programming")
@@ -251,7 +251,7 @@ with ds:
         with col3: st.info("EDA")
         with col4: st.info("Dashboarding")
 
-    with st.container(border=True):
+    with st.container():
         fig = px.violin(data_frame=year_df, x='Year', y='ExtremeType', orientation='h', color='ExtremeType',
                         color_discrete_map=phd_colormap
                         ).update_traces(orientation='h', side='positive', width=1, points='all', pointpos=0, jitter=0.35,
@@ -267,7 +267,7 @@ with ds:
         )
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
-    with st.container(border=True):
+    with st.container():
         # Filter the number of entries by extremophile type, phylum, and geofeature
         extremeType_count = data['ExtremeType'].value_counts()
         phylum_count = data.groupby('ExtremeType')['Phylum'].value_counts()
@@ -298,7 +298,7 @@ with ds:
         fig.update_layout(showlegend=False)
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
-    with st.container(border=True):
+    with st.container():
         phylum_count = data.groupby('ExtremeType')['Phylum'].value_counts()
         phylum_count = pd.DataFrame(phylum_count)
         # Reorganize the Phylum dataframe
@@ -312,7 +312,7 @@ with ds:
         fig.update_traces(textposition='inside', textinfo='percent+label')
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
-    with st.container(border=True):
+    with st.container():
         phylum_count = data.groupby('ExtremeType')['Phylum'].value_counts()
         phylum_count = pd.DataFrame(phylum_count)
         # Reorganize the Phylum dataframe
@@ -395,7 +395,7 @@ with ds:
 
         st.plotly_chart(fig, use_container_width=True, theme=None)
         
-    with st.container(border=True):
+    with st.container():
         resp_count = data.groupby('ExtremeType')['Respiration'].value_counts()
         resp_count = pd.DataFrame(resp_count)
         # Reorganize the Phylum dataframe
@@ -479,7 +479,7 @@ with ds:
         fig.update_layout(title="<b>Phylum distribution by type of respiratory metabolism</b>")
         st.plotly_chart(fig, use_container_width=True, theme=None)
 
-    with st.container(border=True):
+    with st.container():
         # --------------------------
         # Choropleth data cleaning
         # --------------------------
@@ -708,7 +708,7 @@ with ds:
 
         st.plotly_chart(fig, use_container_width = True, theme = None)
         
-    with st.container(border=True):
+    with st.container():
         metricsByType = pd.DataFrame(identity['ExtremeType']).join(biometrics)
 
         ### TEMPERATURE
@@ -872,7 +872,7 @@ with ds:
                           xaxis_title='Salinity (%)')
         st.plotly_chart(fig, use_container_width=True, theme = None)
         
-    with st.container(border=True):
+    with st.container():
         data = pd.read_excel("streamlit-portfolio/data/composition_pol.xlsx", sheet_name="dataset", skiprows=1)
         monomers = pd.read_excel("streamlit-portfolio/data/composition_mon.xlsx", sheet_name="monomers", skiprows=1)
         monomers = monomers.iloc[:, 2:]
@@ -937,7 +937,7 @@ with ds:
 
         st.plotly_chart(fig, use_container_width=True, theme="streamlit")
         
-    with st.container(border=True):
+    with st.container():
         ### RADAR CHART OF MONOMER POLARITY IN EXTREMOPHILIC EPS
         def percentage(part, whole):
             # Transform absolute data in axis to % of max
