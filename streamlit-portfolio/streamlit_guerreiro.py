@@ -172,14 +172,14 @@ with phd:
                " is often a arduous path and requires patience, determination and ambition. Backing up, defending and presenting our ideas is also a part of the research life, such that I have honed"
                "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences.")
 
-    with st.container(border=True):
+    """with st.container(border=True):
         st.markdown("Skills demonstrated in this section:")
         col1, col2, col3, col4, col5 = st.columns(5)
         with col1: st.info("Critical Thinking")
         with col2: st.info("Problem Solving")
         with col3: st.info("Public Speaking")
         with col4: st.info("Technical Writing")
-        with col5: st.info("Data Presentation")
+        with col5: st.info("Data Presentation")"""
 
     st.write("")
 
