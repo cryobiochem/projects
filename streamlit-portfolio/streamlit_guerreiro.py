@@ -172,14 +172,14 @@ with phd:
                " is often a arduous path and requires patience, determination and ambition. Backing up, defending and presenting our ideas is also a part of the research life, such that I have honed"
                "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences.")
 
-    phd_container = st.container(border=True)    
-    phd_container.markdown("Skills demonstrated in this section:")
-    col1, col2, col3, col4, col5 = phd_container.columns(5)
-    with col1: phd_container.info("Critical Thinking")
-    with col2: phd_container.info("Problem Solving")
-    with col3: phd_container.info("Public Speaking")
-    with col4: phd_container.info("Technical Writing")
-    with col5: phd_container.info("Data Presentation")
+    with st.container(border=True): 
+        st.markdown("Skills demonstrated in this section:")
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1: st.info("Critical Thinking")
+        with col2: st.info("Problem Solving")
+        with col3: st.info("Public Speaking")
+        with col4: st.info("Technical Writing")
+        with col5: st.info("Data Presentation")
 
     st.write("")
 
@@ -188,6 +188,7 @@ with phd:
     st.write("")
     st.write("")
     st.subheader("Cryopreservation fundamentals + my approach")
+    
     with st.container(border=True):
         st.image("https://i.imgur.com/fW46l27.png")
 
